@@ -8,6 +8,14 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>SSDT-I2C-SPOOF.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-I2C-SPOOF.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>SSDT-GPRW.aml</string>
 				<key>Enabled</key>
 				<true/>
@@ -99,6 +107,62 @@
 		<array/>
 		<key>Patch</key>
 		<array>
+			<dict>
+				<key>Replace</key>
+				<data>FBRYU1RBAKALkpNTRFMx</data>
+				<key>Find</key>
+				<data>FBRfU1RBAKALkpNTRFMx</data>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Comment</key>
+				<string>Disable Original TPL1 (Rename _STA to XSTA)</string>
+			</dict>
+			<dict>
+				<key>Replace</key>
+				<data>FCtYU1RBAKAikZNTRFMw</data>
+				<key>Find</key>
+				<data>FCtfU1RBAKAikZNTRFMw</data>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Comment</key>
+				<string>Disable Original TPD0 (Rename _STA to XSTA)</string>
+			</dict>
+			<dict>
+				<key>ReplaceMask</key>
+				<data>/wAA//8=</data>
+				<key>Replace</key>
+				<data>iQAABQE=</data>
+				<key>Mask</key>
+				<data>/wAA//8=</data>
+				<key>Find</key>
+				<data>iQAAFQE=</data>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<false/>
+				<key>Comment</key>
+				<string>Fix I2C APIC Interrupt ExclusiveAndWake to Exclusive</string>
+			</dict>
+			<dict>
+				<key>ReplaceMask</key>
+				<data>/wAA/////w==</data>
+				<key>Replace</key>
+				<data>jwAAAQEFAA==</data>
+				<key>Mask</key>
+				<data>/wAA/////w==</data>
+				<key>Find</key>
+				<data>jwAAAQEVAA==</data>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<false/>
+				<key>Comment</key>
+				<string>Fix I2C GpioInt ExclusiveAndWake to Exclusive</string>
+			</dict>
 			<dict>
 				<key>Base</key>
 				<string></string>
@@ -1445,7 +1509,7 @@
 				<key>bluetoothInternalControllerInfo</key>
 				<data>AAAAAAAAAAAAAAAAAAA=</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 debug=0x100 -vi2c-force-polling</string>
+				<string>-nvmefaspm</string>
 				<key>csr-active-config</key>
 				<data>AwoAAA==</data>
 				<key>prev-lang:kbd</key>
